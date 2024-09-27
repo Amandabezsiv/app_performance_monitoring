@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "django.contrib.staticfiles", "monitoring"
+    "django.contrib.staticfiles", "monitoring",
+    "djongo"
+
 ]
 
 MIDDLEWARE = [
@@ -48,7 +50,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "monitoring.middleware.PerformanceMonitoringMiddleware",
 ]
+
 
 ROOT_URLCONF = "monitoring_plataform.urls"
 
@@ -86,12 +90,6 @@ DATABASES = {
     }
 }
 
-
-connect(
-    db='app_performance_db',
-    host='localhost',
-    port=27017
-)
 
 
 # Password validation
