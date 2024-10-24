@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ report.title }}</title>
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  
+</head>
+<body>
+    <h1>{{ report.title }}</h1>
+    <p>Generated at: {{ report.generated_at }}</p>
+    <div>{{ report.content }}</div>
+    <h2>Graphs</h2>
+        <img src="{{ cpu_usage_graph_url }}" alt="CPU usage graph">
+        <img src="{{ access_graph_url }}" alt="Recent access graph">
+    
+</body>
+</html>
